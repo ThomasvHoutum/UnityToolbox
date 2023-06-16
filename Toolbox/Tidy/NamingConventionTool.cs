@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System.IO;
+using System;
 
 namespace Tidy
 {
@@ -74,7 +75,7 @@ namespace Tidy
         private static void LoadDataFromJson()
         {
             string jsonFilePath = "";
-            var assetGUIDs = AssetDatabase.FindAssets("TidyConfig t:json");
+            var assetGUIDs = AssetDatabase.FindAssets("TidyConfig");
             if (assetGUIDs.Length > 0)
                 jsonFilePath = AssetDatabase.GUIDToAssetPath(assetGUIDs[0]);
             else
